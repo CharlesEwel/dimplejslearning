@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
-    
+
     <style>
       circle.dimple-series-1 {
         fill: red;
@@ -17,7 +17,7 @@
 
     <script type="text/javascript">
       function draw(data) {
-      
+
       /*
         D3.js setup code
       */
@@ -50,6 +50,7 @@
 
           // Find range of date column
           var time_extent = d3.extent(data, function(d) {
+              //debugger;
               return d['date'];
           });
 
@@ -67,6 +68,8 @@
           var count_scale = d3.scale.linear()
             .range([height, margin])
             .domain(count_extent);
+
+          debugger;
 
           var time_axis = d3.svg.axis()
             .scale(time_scale)
